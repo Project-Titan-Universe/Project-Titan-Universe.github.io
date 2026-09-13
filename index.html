@@ -620,10 +620,50 @@
         padding: 26px;
     }
 }
+/* NEWS SECTION */
 
-</style>
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin: 42px 0 34px;
 }
-    </style>
+
+.news-card {
+    padding: 30px 24px;
+    border: 1px solid #26302c;
+    background: #0b0f0d;
+    text-align: left;
+}
+
+.news-card h3 {
+    margin: 0 0 8px;
+    font-size: 1.5rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.news-card .subtitle {
+    margin-bottom: 18px;
+    color: #a7c5b7;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.news-card p {
+    margin: 0;
+    color: #c8d3ce;
+}
+
+@media (max-width: 750px) {
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
 </head>
 
 <body>
@@ -969,23 +1009,39 @@
             From the Project Titan Universe
         </h2>
 
-        <p>
-            <strong>SHIFT</strong><br>
-            Project Titan • Book One<br>
-            Available now.
-        </p>
+        <div class="news-grid">
 
-        <p>
-            <strong>IMOGEN</strong><br>
-            Project Titan • Book Two<br>
-            Available now.
-        </p>
+    <div class="news-card">
+        <h3>SHIFT</h3>
 
-        <p>
-            <strong>ALTERED</strong><br>
-            Project Titan — Chimera • Book One<br>
-            Currently in development.
-        </p>
+        <div class="subtitle">
+            Project Titan • Book One
+        </div>
+
+        <p>Available now.</p>
+    </div>
+
+    <div class="news-card">
+        <h3>IMOGEN</h3>
+
+        <div class="subtitle">
+            Project Titan • Book Two
+        </div>
+
+        <p>Available now.</p>
+    </div>
+
+    <div class="news-card">
+        <h3>ALTERED</h3>
+
+        <div class="subtitle">
+            Project Titan — Chimera • Book One
+        </div>
+
+        <p>Currently in development.</p>
+    </div>
+
+</div>
 
         <p>
             New books, character reveals, cover art, and Project Titan Universe

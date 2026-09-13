@@ -3,65 +3,460 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Project Titan Universe | Justin Nead</title>
+    <meta name="description" content="The official home of the Project Titan Universe by author Justin Nead. Explore the books, characters, stories, and world of Project Titan.">
 
     <style>
-        body {
+        * {
             margin: 0;
-            background: #080b0e;
-            color: #f2f2f2;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-
-        main {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 30px;
+            padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #050607;
+            color: #f1eee8;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(5, 6, 7, 0.92);
+            border-bottom: 1px solid rgba(205, 169, 110, 0.22);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: auto;
+            min-height: 76px;
+            padding: 0 5%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .site-name {
+            color: #e8dfd2;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 700;
+            font-size: 0.95rem;
+            white-space: nowrap;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #aaa7a1;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.13em;
+            font-size: 0.72rem;
+            transition: color 0.25s ease;
+        }
+
+        nav a:hover {
+            color: #e2b978;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            padding: 125px 5% 70px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(112, 73, 32, 0.13) 0%,
+                    rgba(5, 6, 7, 0) 48%
+                ),
+                #050607;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            left: 10%;
+            right: 10%;
+            bottom: 0;
+            height: 1px;
+
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(205, 169, 110, 0.4),
+                transparent
+            );
+        }
+
+        .hero-content {
+            width: 100%;
+            max-width: 1000px;
+            margin: auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .emblem {
+            display: block;
+            width: min(440px, 78vw);
+            height: auto;
+            margin: 0 auto 25px;
+
+            filter: drop-shadow(0 0 24px rgba(199, 145, 74, 0.18));
+        }
+
+        .eyebrow {
+            color: #bd9b67;
+            text-transform: uppercase;
+            letter-spacing: 0.45em;
+            font-size: 0.7rem;
+            margin-bottom: 15px;
+        }
+
         h1 {
-            margin: 0;
-            font-size: clamp(2.5rem, 8vw, 6rem);
-            letter-spacing: 0.08em;
+            font-size: clamp(2.6rem, 7vw, 5.6rem);
+            line-height: 0.98;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+            font-weight: 700;
         }
 
         .author {
-            margin-top: 15px;
-            color: #9da6ad;
-            letter-spacing: 0.2em;
+            margin-top: 22px;
+            color: #aaa7a1;
             text-transform: uppercase;
+            letter-spacing: 0.32em;
+            font-size: 0.78rem;
         }
 
-        .status {
-            margin-top: 60px;
-            padding-top: 20px;
-            border-top: 1px solid #343b40;
-            color: #78838b;
-            font-size: 0.8rem;
-            letter-spacing: 0.2em;
+        .hero-description {
+            max-width: 680px;
+            margin: 30px auto 0;
+            color: #c6c1b9;
+            font-size: 1.02rem;
+        }
+
+        .hero-buttons {
+            margin-top: 38px;
+
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .button {
+            display: inline-block;
+            min-width: 185px;
+            padding: 13px 24px;
+
+            border: 1px solid #b58a50;
+            color: #e7d5b9;
+            text-decoration: none;
             text-transform: uppercase;
+            letter-spacing: 0.16em;
+            font-size: 0.72rem;
+
+            transition:
+                background 0.25s ease,
+                color 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .button:hover {
+            background: #b58a50;
+            color: #080808;
+        }
+
+        .button.secondary {
+            border-color: #55514b;
+            color: #aaa7a1;
+        }
+
+        .button.secondary:hover {
+            border-color: #aaa7a1;
+            background: #aaa7a1;
+            color: #080808;
+        }
+
+        /* INTRODUCTION */
+
+        .introduction {
+            padding: 110px 6%;
+            background: #080a0c;
+        }
+
+        .intro-inner {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .section-label {
+            color: #b9915b;
+            text-transform: uppercase;
+            letter-spacing: 0.38em;
+            font-size: 0.68rem;
+            margin-bottom: 20px;
+        }
+
+        .introduction h2 {
+            font-size: clamp(2rem, 5vw, 3.4rem);
+            line-height: 1.1;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .introduction p {
+            color: #aaa7a1;
+            max-width: 720px;
+            margin: auto;
+            font-size: 1rem;
+        }
+
+        /* PLACEHOLDER FOR FUTURE CONTENT */
+
+        .coming {
+            padding: 100px 6%;
+            text-align: center;
+            background: #050607;
+        }
+
+        .coming h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 18px;
+        }
+
+        .coming p {
+            color: #8e8b85;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 45px 6%;
+            border-top: 1px solid #252525;
+            text-align: center;
+            background: #030405;
+        }
+
+        footer .footer-name {
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            font-size: 0.78rem;
+            color: #b8b2aa;
+        }
+
+        footer .copyright {
+            margin-top: 12px;
+            color: #64615d;
+            font-size: 0.75rem;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            .nav-container {
+                justify-content: center;
+                min-height: 65px;
+            }
+
+            .site-name {
+                font-size: 0.78rem;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 105px;
+            }
+
+            .emblem {
+                width: min(360px, 88vw);
+            }
+
+            .eyebrow {
+                letter-spacing: 0.3em;
+            }
+
+            h1 {
+                letter-spacing: 0.05em;
+            }
+
+            .author {
+                letter-spacing: 0.2em;
+            }
+
+            .hero-description {
+                font-size: 0.95rem;
+            }
         }
     </style>
 </head>
 
 <body>
 
+    <header>
+        <div class="nav-container">
+
+            <a class="site-name" href="#">
+                Project Titan Universe
+            </a>
+
+            <nav>
+                <a href="#">Home</a>
+                <a href="#books">Books</a>
+                <a href="#universe">Universe</a>
+                <a href="#characters">Characters</a>
+                <a href="#about">About</a>
+                <a href="#news">News</a>
+            </nav>
+
+        </div>
+    </header>
+
+
     <main>
-        <h1>PROJECT TITAN UNIVERSE</h1>
 
-        <div class="author">
-            A Universe by Justin Nead
-        </div>
+        <section class="hero">
 
-        <div class="status">
-            Official Site — Under Construction
-        </div>
+            <div class="hero-content">
+
+                <img
+                    class="emblem"
+                    src="Project titan Universe emblem.png"
+                    alt="Project Titan Universe emblem"
+                >
+
+                <div class="eyebrow">
+                    The Official Home of
+                </div>
+
+                <h1>
+                    Project Titan<br>
+                    Universe
+                </h1>
+
+                <div class="author">
+                    A Universe by Justin Nead
+                </div>
+
+                <p class="hero-description">
+                    One world. Different stories. Heroes, monsters,
+                    buried experiments, and secrets that refuse to stay buried.
+                    Welcome to the Project Titan Universe.
+                </p>
+
+                <div class="hero-buttons">
+                    <a class="button" href="#books">
+                        Start Reading
+                    </a>
+
+                    <a class="button secondary" href="#universe">
+                        Explore the Universe
+                    </a>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="introduction" id="universe">
+
+            <div class="intro-inner">
+
+                <div class="section-label">
+                    One Shared World
+                </div>
+
+                <h2>
+                    Every Story Leaves a Mark
+                </h2>
+
+                <p>
+                    Project Titan is a growing shared universe where
+                    extraordinary abilities, human choices, hidden history,
+                    and the supernatural exist within the same world.
+                    Every series tells its own story. Together, they reveal
+                    something much larger.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="coming" id="books">
+
+            <div class="section-label">
+                The Stories
+            </div>
+
+            <h2>
+                Enter the Universe
+            </h2>
+
+            <p>
+                Books, characters, locations, and the different branches
+                of the Project Titan Universe are coming here next.
+            </p>
+
+        </section>
+
     </main>
+
+
+    <footer>
+
+        <div class="footer-name">
+            Project Titan Universe
+        </div>
+
+        <div class="copyright">
+            &copy; 2026 Justin Nead. All rights reserved.
+        </div>
+
+    </footer>
 
 </body>
 </html>

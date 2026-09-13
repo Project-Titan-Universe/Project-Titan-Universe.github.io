@@ -568,6 +568,59 @@
     .books-section {
         padding: 70px 6%;
     }
+/* CHARACTERS SECTION */
+
+#characters {
+    background: #07090a;
+}
+
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    margin-top: 42px;
+}
+
+.character-card {
+    padding: 34px;
+    border: 1px solid #26302c;
+    background: #0b0f0d;
+    text-align: left;
+}
+
+.character-card h3 {
+    margin: 0 0 8px;
+    font-size: 1.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.character-card .subtitle {
+    margin-bottom: 18px;
+    color: #a7c5b7;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.character-card p {
+    margin: 0;
+    color: #c8d3ce;
+    line-height: 1.7;
+}
+
+@media (max-width: 750px) {
+    .character-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .character-card {
+        padding: 26px;
+    }
+}
+
+</style>
 }
     </style>
 </head>
@@ -816,6 +869,57 @@
 
             </div>
 
+        </section>
+
+        <section class="introduction" id="characters">
+    <div class="intro-inner">
+
+        <div class="section-label">
+            Faces of the Universe
+        </div>
+
+        <h2>
+            Meet the Characters
+        </h2>
+
+        <p>
+            Every story in the Project Titan Universe begins with people.
+            Heroes, survivors, families, and those caught in the consequences
+            of a history larger than any of them realize.
+        </p>
+
+        <div class="character-grid">
+
+            <div class="character-card">
+                <h3>CARTER BARNES</h3>
+
+                <div class="subtitle">
+                    SHIFT
+                </div>
+
+                <p>
+                    An ordinary teenager whose discovery that he can alter
+                    the density of his own body opens the door to Project Titan.
+                </p>
+            </div>
+
+            <div class="character-card">
+                <h3>SARAH KILLCANNON</h3>
+
+                <div class="subtitle">
+                    IMOGEN
+                </div>
+
+                <p>
+                    A young woman who has spent years living beside the hidden
+                    consequences of Project Titan—and can no longer remain
+                    outside them.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
         </section>
 
     </main>

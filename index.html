@@ -460,6 +460,110 @@
                 font-size: 0.95rem;
             }
         }
+
+        /* BOOKS SECTION */
+
+.books-section {
+    padding: 90px 6%;
+    background: #050607;
+}
+
+.books-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.books-heading {
+    margin-bottom: 50px;
+}
+
+.book-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 90px;
+}
+
+.book-card {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.book-card:nth-child(even) {
+    grid-template-columns: 1fr 320px;
+}
+
+.book-card:nth-child(even) .book-cover {
+    order: 2;
+}
+
+.book-card:nth-child(even) .book-content {
+    order: 1;
+}
+
+.book-cover {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
+}
+
+.book-content {
+    text-align: left;
+}
+
+.book-card h3 {
+    font-size: 1.5rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.book-card p {
+    line-height: 1.7;
+    color: #b8b8b8;
+}
+
+.book-description {
+    max-width: 560px;
+}
+
+.book-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+@media (max-width: 850px) {
+    .book-card,
+    .book-card:nth-child(even) {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .book-card:nth-child(even) .book-cover,
+    .book-card:nth-child(even) .book-content {
+        order: initial;
+    }
+
+    .book-cover {
+        max-width: 300px;
+    }
+
+    .book-content {
+        text-align: center;
+    }
+
+    .book-actions {
+        justify-content: center;
+    }
+
+    .books-section {
+        padding: 70px 6%;
+    }
+}
     </style>
 </head>
 
@@ -588,6 +692,8 @@
                             alt="SHIFT by Justin Nead"
                         >
 
+                       <div class="book-content">
+                           
                         <div class="book-series">
                             Project Titan • Book One
                         </div>
@@ -618,7 +724,7 @@
                             </a>
 
                         </div>
-
+                       </div>
                     </article>
 
 
@@ -630,6 +736,8 @@
                             alt="IMOGEN by Justin Nead"
                         >
 
+                       <div class-"book-content">
+                           
                         <div class="book-series">
                             Project Titan • Book Two
                         </div>
@@ -655,7 +763,7 @@
                             </a>
 
                         </div>
-
+                       </div>
                     </article>
 
                 </div>

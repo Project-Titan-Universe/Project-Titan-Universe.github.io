@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SHIFT | Project Titan Universe</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #050607;
+            color: #e8fdf2;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.7;
+        }
+
+        header {
+            border-bottom: 1px solid rgba(232, 253, 242, 0.12);
+            background: rgba(5, 6, 7, 0.96);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: auto;
+            min-height: 76px;
+            padding: 0 5%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .site-name {
+            color: #e8fdf2;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #c9ddd4;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-size: 0.78rem;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+        }
+
+        .book-page {
+            max-width: 1200px;
+            margin: auto;
+            padding: 80px 6%;
+        }
+
+        .book-hero {
+            display: grid;
+            grid-template-columns: minmax(260px, 360px) 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .book-cover {
+            width: 100%;
+            display: block;
+        }
+
+        .series-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: #a8c6b8;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 7vw, 6rem);
+            line-height: 0.95;
+            letter-spacing: 0.04em;
+            margin-bottom: 16px;
+        }
+
+        .author {
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: #b8cbc2;
+            margin-bottom: 32px;
+        }
+
+        .tagline {
+            font-size: 1.35rem;
+            font-style: italic;
+            margin-bottom: 28px;
+            color: #ffffff;
+        }
+
+        .synopsis {
+            max-width: 700px;
+            color: #d4e2dc;
+            margin-bottom: 20px;
+        }
+
+        .actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 34px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 26px;
+            border: 1px solid #dcebe4;
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.13em;
+            font-size: 0.78rem;
+            font-weight: 700;
+        }
+
+        .button:hover {
+            background: #e8fdf2;
+            color: #050607;
+        }
+
+        .button.secondary {
+            border-color: #64756d;
+            color: #cbd8d2;
+        }
+
+        .back-link {
+            margin-top: 70px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(232, 253, 242, 0.12);
+        }
+
+        .back-link a {
+            color: #c9ddd4;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-size: 0.8rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 35px 5%;
+            border-top: 1px solid rgba(232, 253, 242, 0.12);
+            color: #819087;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 750px) {
+            .nav-container {
+                flex-direction: column;
+                justify-content: center;
+                padding-top: 18px;
+                padding-bottom: 18px;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .book-page {
+                padding-top: 50px;
+            }
+
+            .book-hero {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .book-cover {
+                max-width: 330px;
+                margin: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="nav-container">
+        <a class="site-name" href="index.html">Project Titan Universe</a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html#books">Books</a>
+            <a href="index.html#universe">Universe</a>
+            <a href="index.html#characters">Characters</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#news">News</a>
+        </nav>
+    </div>
+</header>
+
+<main class="book-page">
+
+    <section class="book-hero">
+
+        <div>
+            <img
+                class="book-cover"
+                src="Shift.png"
+                alt="SHIFT by Justin Nead"
+            >
+        </div>
+
+        <div>
+            <p class="series-label">Project Titan • Book One</p>
+
+            <h1>SHIFT</h1>
+
+            <p class="author">Justin Nead</p>
+
+            <p class="tagline">
+                Carter Barnes was supposed to be an ordinary teenager.
+            </p>
+
+            <p class="synopsis">
+                Then he discovered he could change the density of his own body.
+                What begins as an impossible change soon opens the door to
+                something much larger: buried experiments, extraordinary people,
+                and consequences that reach far beyond Carter himself.
+            </p>
+
+            <p class="synopsis">
+                SHIFT is the beginning of the Project Titan Universe.
+            </p>
+
+            <div class="actions">
+                <a
+                    class="button"
+                    href="https://a.co/d/06R2PuCq"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Buy on Amazon
+                </a>
+
+                <a class="button secondary" href="index.html#books">
+                    Back to Books
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+    <div class="back-link">
+        <a href="index.html#books">← Return to Project Titan Books</a>
+    </div>
+
+</main>
+
+<footer>
+    © 2026 Justin Nead • Project Titan Universe
+</footer>
+
+</body>
+</html>

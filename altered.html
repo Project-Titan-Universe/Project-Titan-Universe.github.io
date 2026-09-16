@@ -12,6 +12,7 @@
 
     <title>ALTERED | Project Titan Universe</title>
     <meta name="description" content="At nineteen, Trisha Valdren is trying to build a life of her own in Carver when everything changes. ALTERED begins the Chimera branch of the Project Titan Universe.">
+    <link rel="canonical" href="https://project-titan-universe.github.io/altered.html">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="ALTERED | Project Titan Universe">
@@ -31,19 +32,48 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Book",
-      "name": "ALTERED",
-      "author": {
-        "@type": "Person",
-        "name": "Justin Nead"
-      },
-      "url": "https://project-titan-universe.github.io/altered.html",
-      "image": "https://project-titan-universe.github.io/Altered.png",
-      "description": "At nineteen, Trisha Valdren is trying to build a life of her own in Carver when everything changes. ALTERED begins the Chimera branch of the Project Titan Universe.",
-      "isPartOf": {
-        "@type": "BookSeries",
-        "name": "Project Titan — Chimera"
-      }
+      "@graph": [
+        {
+          "@type": "Book",
+          "@id": "https://project-titan-universe.github.io/altered.html#book",
+          "name": "ALTERED",
+          "author": {
+            "@id": "https://project-titan-universe.github.io/#author"
+          },
+          "url": "https://project-titan-universe.github.io/altered.html",
+          "image": "https://project-titan-universe.github.io/Altered.png",
+          "description": "At nineteen, Trisha Valdren is trying to build a life of her own in Carver when everything changes. ALTERED begins the Chimera branch of the Project Titan Universe.",
+          "creativeWorkStatus": "In Development",
+          "isPartOf": {
+            "@type": "BookSeries",
+            "name": "Project Titan — Chimera"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://project-titan-universe.github.io/altered.html#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Project Titan Universe",
+              "item": "https://project-titan-universe.github.io/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Books",
+              "item": "https://project-titan-universe.github.io/#books"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "ALTERED",
+              "item": "https://project-titan-universe.github.io/altered.html"
+            }
+          ]
+        }
+      ]
     }
     </script>
 

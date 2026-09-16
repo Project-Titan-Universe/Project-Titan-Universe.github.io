@@ -1,0 +1,81 @@
+name: Notify IndexNow
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**.html'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  notify-indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Build URL list
+        id: urls
+        shell: bash
+        run: |
+          BASE="https://project-titan-universe.github.io"
+
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            mapfile -t FILES < <(find . -maxdepth 1 -type f -name '*.html' -printf '%f\n' | sort)
+          else
+            BEFORE="${{ github.event.before }}"
+            AFTER="${{ github.sha }}"
+            mapfile -t FILES < <(git diff --name-only "$BEFORE" "$AFTER" -- '*.html' || true)
+          fi
+
+          URLS=()
+          for FILE in "${FILES[@]}"; do
+            FILE="${FILE#./}"
+            [[ -z "$FILE" ]] && continue
+
+            if [[ "$FILE" == "index.html" ]]; then
+              URLS+=("$BASE/")
+            else
+              URLS+=("$BASE/$FILE")
+            fi
+          done
+
+          if [[ ${#URLS[@]} -eq 0 ]]; then
+            echo "count=0" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          printf '%s\n' "${URLS[@]}" > /tmp/indexnow-urls.txt
+          echo "count=${#URLS[@]}" >> "$GITHUB_OUTPUT"
+
+      - name: Submit changed pages to IndexNow
+        if: steps.urls.outputs.count != '0'
+        shell: bash
+        run: |
+          KEY="695db06d526286fe0264a4f22c2e3c9a"
+          HOST="project-titan-universe.github.io"
+          KEY_LOCATION="https://project-titan-universe.github.io/${KEY}.txt"
+
+          jq -n \
+            --arg host "$HOST" \
+            --arg key "$KEY" \
+            --arg keyLocation "$KEY_LOCATION" \
+            --rawfile urls /tmp/indexnow-urls.txt \
+            '{
+              host: $host,
+              key: $key,
+              keyLocation: $keyLocation,
+              urlList: ($urls | split("\n") | map(select(length > 0)))
+            }' > /tmp/indexnow-payload.json
+
+          curl --fail --silent --show-error \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            -X POST \
+            --data-binary @/tmp/indexnow-payload.json \
+            https://api.indexnow.org/IndexNow

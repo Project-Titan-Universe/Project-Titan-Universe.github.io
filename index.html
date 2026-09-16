@@ -6,23 +6,24 @@
 
     <title>Project Titan Universe | Justin Nead</title>
     <meta name="description" content="The official home of the Project Titan Universe by author Justin Nead. Explore the books, characters, stories, and world of Project Titan.">
+    <link rel="canonical" href="https://project-titan-universe.github.io/">
+    <link rel="icon" href="favicon.ico" sizes="any">
 
     <meta property="og:type" content="website">
+    <meta property="og:title" content="Project Titan Universe | Justin Nead">
+    <meta property="og:description" content="Enter the Project Titan Universe — a connected world of extraordinary abilities, hidden histories, difficult choices, grounded science fiction, thriller elements, and the supernatural.">
+    <meta property="og:url" content="https://project-titan-universe.github.io/">
+    <meta property="og:image" content="https://project-titan-universe.github.io/social-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Project Titan Universe by Justin Nead">
 
-<meta property="og:title" content="Project Titan Universe | Justin Nead">
-
-<meta property="og:description" content="Enter the Project Titan Universe — a connected world of extraordinary abilities, hidden histories, difficult choices, grounded science fiction, thriller elements, and the supernatural.">
-
-<meta property="og:url" content="https://project-titan-universe.github.io/">
-<meta property="og:image" content="https://project-titan-universe.github.io/social-preview.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-
-<meta name="twitter:title" content="Project Titan Universe | Justin Nead">
-
-<meta name="twitter:description" content="Enter the Project Titan Universe — a connected world of extraordinary abilities, hidden histories, difficult choices, grounded science fiction, thriller elements, and the supernatural.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Project Titan Universe | Justin Nead">
+    <meta name="twitter:description" content="Enter the Project Titan Universe — a connected world of extraordinary abilities, hidden histories, difficult choices, grounded science fiction, thriller elements, and the supernatural.">
     <meta name="twitter:image" content="https://project-titan-universe.github.io/social-preview.png">
+    <meta name="twitter:image:alt" content="Project Titan Universe by Justin Nead">
+
     <style>
         * {
             margin: 0;
@@ -41,15 +42,12 @@
             line-height: 1.6;
         }
 
-        /* HEADER */
-
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
-
             background: rgba(5, 6, 7, 0.92);
             border-bottom: 1px solid rgba(205, 169, 110, 0.22);
             backdrop-filter: blur(10px);
@@ -60,7 +58,6 @@
             margin: auto;
             min-height: 76px;
             padding: 0 5%;
-
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -96,25 +93,16 @@
             color: #e2b978;
         }
 
-        /* HERO */
-
         .hero {
             min-height: 100vh;
             padding: 125px 5% 70px;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
             position: relative;
             overflow: hidden;
-
             background:
-                radial-gradient(
-                    circle at center,
-                    rgba(112, 73, 32, 0.13) 0%,
-                    rgba(5, 6, 7, 0) 48%
-                ),
+                radial-gradient(circle at center, rgba(112, 73, 32, 0.13) 0%, rgba(5, 6, 7, 0) 48%),
                 #050607;
         }
 
@@ -125,13 +113,7 @@
             right: 10%;
             bottom: 0;
             height: 1px;
-
-            background: linear-gradient(
-                90deg,
-                transparent,
-                rgba(205, 169, 110, 0.4),
-                transparent
-            );
+            background: linear-gradient(90deg, transparent, rgba(205, 169, 110, 0.4), transparent);
         }
 
         .hero-content {
@@ -148,7 +130,6 @@
             width: min(440px, 78vw);
             height: auto;
             margin: 0 auto 25px;
-
             filter: drop-shadow(0 0 24px rgba(199, 145, 74, 0.18));
         }
 
@@ -183,31 +164,30 @@
             font-size: 1.02rem;
         }
 
-        .hero-buttons {
-            margin-top: 38px;
-
+        .hero-buttons,
+        .book-actions {
             display: flex;
-            justify-content: center;
             flex-wrap: wrap;
             gap: 15px;
+        }
+
+        .hero-buttons {
+            margin-top: 38px;
+            justify-content: center;
         }
 
         .button {
             display: inline-block;
             min-width: 185px;
             padding: 13px 24px;
-
             border: 1px solid #b58a50;
             color: #e7d5b9;
             text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 0.16em;
             font-size: 0.72rem;
-
-            transition:
-                background 0.25s ease,
-                color 0.25s ease,
-                border-color 0.25s ease;
+            text-align: center;
+            transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
         }
 
         .button:hover {
@@ -225,8 +205,6 @@
             background: #aaa7a1;
             color: #080808;
         }
-
-        /* INTRODUCTION */
 
         .introduction {
             padding: 110px 6%;
@@ -247,7 +225,8 @@
             margin-bottom: 20px;
         }
 
-        .introduction h2 {
+        .introduction h2,
+        .books-heading h2 {
             font-size: clamp(2rem, 5vw, 3.4rem);
             line-height: 1.1;
             letter-spacing: 0.04em;
@@ -255,170 +234,189 @@
             margin-bottom: 30px;
         }
 
-        .introduction p {
+        .introduction p,
+        .books-heading p {
             color: #aaa7a1;
             max-width: 720px;
-            margin: auto;
+            margin: 0 auto 18px;
             font-size: 1rem;
         }
 
-        /* PLACEHOLDER FOR FUTURE CONTENT */
-
-        .coming {
-            padding: 100px 6%;
-            text-align: center;
+        .books-section {
+            padding: 90px 6%;
             background: #050607;
         }
 
-        .coming h2 {
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
+        .books-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .books-heading {
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .book-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 55px;
+        }
+
+        .book-card {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .book-card:nth-child(even) {
+            grid-template-columns: 1fr 320px;
+        }
+
+        .book-card:nth-child(even) .book-cover {
+            order: 2;
+        }
+
+        .book-card:nth-child(even) .book-content {
+            order: 1;
+        }
+
+        .book-cover {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
+        }
+
+        .book-content {
+            text-align: left;
+        }
+
+        .book-series,
+        .coming-next .subtitle {
+            color: #b9915b;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
             text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .book-card h3,
+        .coming-next h3 {
+            font-size: 1.8rem;
             letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .book-description {
+            max-width: 560px;
+            color: #b8b8b8;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .coming-next {
+            margin-top: 70px;
+            padding: 42px;
+            border: 1px solid #3e3529;
+            background: #0b0d0d;
+            text-align: center;
+        }
+
+        .coming-next p {
+            color: #aaa7a1;
+            max-width: 620px;
+            margin: 0 auto 24px;
+        }
+
+        .coming-next .book-actions {
+            justify-content: center;
+        }
+
+        #characters {
+            background: #07090a;
+        }
+
+        .character-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 28px;
+            margin-top: 42px;
+        }
+
+        .character-card {
+            padding: 34px;
+            border: 1px solid #26302c;
+            background: #0b0f0d;
+            text-align: left;
+        }
+
+        .character-link {
+            color: inherit;
+            text-decoration: none;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .character-link:hover {
+            transform: translateY(-3px);
+            border-color: #a7c5b7;
+        }
+
+        .character-card h3 {
+            margin: 0 0 8px;
+            font-size: 1.7rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .character-card .subtitle,
+        .news-card .subtitle {
             margin-bottom: 18px;
+            color: #a7c5b7;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
         }
 
-        .coming p {
-            color: #8e8b85;
-            max-width: 650px;
-            margin: auto;
+        .character-card p,
+        .news-card p {
+            margin: 0 0 18px;
+            color: #c8d3ce;
+            line-height: 1.7;
         }
 
-               <section class="books-section" id="books">
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+            margin: 42px 0 0;
+        }
 
-            <div class="books-inner">
+        .news-card {
+            padding: 30px 24px;
+            border: 1px solid #26302c;
+            background: #0b0f0d;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+        }
 
-                <div class="books-heading">
+        .news-card .book-actions {
+            margin-top: auto;
+        }
 
-                    <div class="section-label">
-                        Published Books
-                    </div>
-
-                    <h2>
-                        Enter the Project Titan Universe
-                    </h2>
-
-                    <p>
-                        Start at the beginning or continue deeper into a world
-                        shaped by extraordinary people, buried history, and
-                        consequences that reach far beyond any single story.
-                    </p>
-
-                </div>
-
-                <div class="book-grid">
-
-                    <article class="book-card">
-
-                        <img
-                            class="book-cover"
-                            src="Shift.png"
-                            alt="SHIFT by Justin Nead"
-                        >
-
-                        <div class="book-series">
-                            Project Titan • Book One
-                        </div>
-
-                        <h3 class="book-title">
-                            SHIFT
-                        </h3>
-
-                        <p class="book-description">
-                            Carter Barnes was supposed to be an ordinary teenager.
-                            Then he discovered he could change the density of his
-                            own body—and opened the door to something much larger.
-                        </p>
-
-                        <div class="book-actions">
-
-                            <a
-                                class="button"
-                                href="https://a.co/d/06R2PuCq"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Buy on Amazon
-                            </a>
-
-                            <a class="button secondary" href="shift.html">
-                                Learn More
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="book-card">
-
-                        <img
-                            class="book-cover"
-                            src="Imogen.png"
-                            alt="IMOGEN by Justin Nead"
-                        >
-
-                        <div class="book-series">
-                            Project Titan • Book Two
-                        </div>
-
-                        <h3 class="book-title">
-                            IMOGEN
-                        </h3>
-
-                        <p class="book-description">
-                            Sarah Killcannon has spent years living beside the
-                            hidden consequences of Project Titan. Now those
-                            consequences are becoming impossible to ignore.
-                        </p>
-
-                        <div class="book-actions">
-
-                        <a
-    class="button"
-    href="https://a.co/d/01pOTmAo"
-    target="_blank"
-    rel="noopener noreferrer"
->
-    Buy on Amazon
-</a>
-
-                            <a class="button secondary" href="imogen.html">
-                                Learn More
-                            </a>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-
-                <div class="coming-next">
-
-                    <div class="section-label">
-                        Coming Next
-                    </div>
-
-                    <h3>
-                        ALTERED
-                    </h3>
-
-                    <div class="subtitle">
-                        Project Titan — Chimera • Book One
-                    </div>
-
-                    <p>
-                        A new branch of the Project Titan Universe begins with
-                        Trisha Valdren.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-        
-        /* FOOTER */
+        .news-card h3 {
+            margin: 0 0 8px;
+            font-size: 1.5rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
 
         footer {
             padding: 45px 6%;
@@ -447,22 +445,50 @@
             font-size: 0.75rem;
         }
 
-        footer .footer-contact a,
-        footer .footer-links a {
+        footer a {
             color: #b9915b;
             text-decoration: none;
-            transition: color 0.25s ease;
         }
 
-        footer .footer-contact a:hover,
-        footer .footer-links a:hover {
+        footer a:hover {
             color: #e2b978;
         }
 
-        /* MOBILE */
+        @media (max-width: 850px) {
+            .book-card,
+            .book-card:nth-child(even) {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .book-card:nth-child(even) .book-cover,
+            .book-card:nth-child(even) .book-content {
+                order: initial;
+            }
+
+            .book-cover {
+                max-width: 300px;
+            }
+
+            .book-content {
+                text-align: center;
+            }
+
+            .book-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .book-actions {
+                justify-content: center;
+            }
+
+            .character-grid {
+                grid-template-columns: 1fr;
+            }
+        }
 
         @media (max-width: 800px) {
-
             .nav-container {
                 justify-content: center;
                 min-height: 65px;
@@ -501,740 +527,206 @@
             }
         }
 
-        /* BOOKS SECTION */
+        @media (max-width: 750px) {
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
 
-.books-section {
-    padding: 90px 6%;
-    background: #050607;
-}
+            .character-card {
+                padding: 26px;
+            }
 
-.books-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.books-heading {
-    margin-bottom: 50px;
-}
-
-.book-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
-}
-
-.book-card {
-    display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 60px;
-    align-items: start;
-}
-
-.book-card:nth-child(even) {
-    grid-template-columns: 1fr 320px;
-}
-
-.book-card:nth-child(even) .book-cover {
-    order: 2;
-}
-
-.book-card:nth-child(even) .book-content {
-    order: 1;
-}
-
-.book-cover {
-    width: 100%;
-    max-width: 320px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
-}
-
-.book-content {
-    text-align: left;
-}
-
-.book-card h3 {
-    font-size: 1.5rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-}
-
-.book-card p {
-    line-height: 1.7;
-    color: #b8b8b8;
-}
-
-.book-description {
-    max-width: 560px;
-}
-
-.book-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-@media (max-width: 850px) {
-    .book-card,
-    .book-card:nth-child(even) {
-        grid-template-columns: 1fr;
-        gap: 28px;
-    }
-
-    .book-card:nth-child(even) .book-cover,
-    .book-card:nth-child(even) .book-content {
-        order: initial;
-    }
-
-    .book-cover {
-        max-width: 300px;
-    }
-
-    .book-content {
-        text-align: center;
-    }
-
-    .book-actions {
-        justify-content: center;
-    }
-
-    .books-section {
-        padding: 70px 6%;
-    }
-}
-/* CHARACTERS SECTION */
-
-#characters {
-    background: #07090a;
-}
-
-.character-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 28px;
-    margin-top: 42px;
-}
-
-.character-card {
-    padding: 34px;
-    border: 1px solid #26302c;
-    background: #0b0f0d;
-    text-align: left;
-}
-.character-link {
-    color: inherit;
-    text-decoration: none;
-    transition: transform 0.2s ease, border-color 0.2s ease;
-}
-
-.character-link:hover {
-    transform: translateY(-3px);
-    border-color: #a7c5b7;
-}
-.character-card h3 {
-    margin: 0 0 8px;
-    font-size: 1.7rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-}
-
-.character-card .subtitle {
-    margin-bottom: 18px;
-    color: #a7c5b7;
-    font-size: 0.82rem;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-}
-
-.character-card p {
-    margin: 0;
-    color: #c8d3ce;
-    line-height: 1.7;
-}
-
-@media (max-width: 750px) {
-    .character-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .character-card {
-        padding: 26px;
-    }
-}
-/* NEWS SECTION */
-
-.news-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
-    margin: 42px 0 34px;
-}
-
-.news-card {
-    padding: 30px 24px;
-    border: 1px solid #26302c;
-    background: #0b0f0d;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-}
-.news-card .book-actions {
-    margin-top: auto;
-}
-.news-card h3 {
-    margin: 0 0 8px;
-    font-size: 1.5rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-}
-
-.news-card .subtitle {
-    margin-bottom: 18px;
-    color: #a7c5b7;
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-}
-
-.news-card p {
-    margin: 0;
-    color: #c8d3ce;
-}
-
-@media (max-width: 750px) {
-    .news-grid {
-        grid-template-columns: 1fr;
-    }
-}
-</style>
-
+            .coming-next {
+                padding: 30px 22px;
+            }
+        }
+    </style>
 </head>
 
 <body>
+<header>
+    <div class="nav-container">
+        <a class="site-name" href="#">Project Titan Universe</a>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#books">Books</a>
+            <a href="#universe">Universe</a>
+            <a href="#characters">Characters</a>
+            <a href="#about">About</a>
+            <a href="#news">News</a>
+        </nav>
+    </div>
+</header>
 
-    <header>
-        <div class="nav-container">
-
-            <a class="site-name" href="#">
-                Project Titan Universe
-            </a>
-
-            <nav>
-                <a href="#">Home</a>
-                <a href="#books">Books</a>
-                <a href="#universe">Universe</a>
-                <a href="#characters">Characters</a>
-                <a href="#about">About</a>
-                <a href="#news">News</a>
-            </nav>
-
+<main>
+    <section class="hero">
+        <div class="hero-content">
+            <img class="emblem" src="project-titan-universe-emblem-transparent.png" alt="Project Titan Universe emblem">
+            <div class="eyebrow">The Official Home of</div>
+            <h1>Project Titan<br>Universe</h1>
+            <div class="author">A Universe by Justin Nead</div>
+            <p class="hero-description">
+                One world. Different stories. Heroes, monsters, buried experiments,
+                and secrets that refuse to stay buried. Welcome to the Project Titan Universe.
+            </p>
+            <div class="hero-buttons">
+                <a class="button" href="#books">Start Reading</a>
+                <a class="button secondary" href="#universe">Explore the Universe</a>
+            </div>
         </div>
-    </header>
+    </section>
 
+    <section class="introduction" id="universe">
+        <div class="intro-inner">
+            <div class="section-label">One Shared World</div>
+            <h2>Every Story Leaves a Mark</h2>
+            <p>Project Titan is a shared universe of extraordinary abilities, hidden histories, human choices, and things that have existed in the shadows far longer than anyone realizes.</p>
+            <p>Each series follows its own characters, conflicts, and corner of the world. Some stories begin with science. Others reach into something much older.</p>
+            <p>They can stand on their own, but they do not exist in isolation. People cross paths. Decisions leave consequences. Events in one story can reshape another.</p>
+            <p>Different stories. Different lives. One world.</p>
+        </div>
+    </section>
 
-    <main>
-
-        <section class="hero">
-
-            <div class="hero-content">
-
-                <img
-                    class="emblem"
-                    src="project-titan-universe-emblem-transparent.png"
-                    alt="Project Titan Universe emblem"
-                >
-
-                <div class="eyebrow">
-                    The Official Home of
-                </div>
-
-                <h1>
-                    Project Titan<br>
-                    Universe
-                </h1>
-
-                <div class="author">
-                    A Universe by Justin Nead
-                </div>
-
-                <p class="hero-description">
-                    One world. Different stories. Heroes, monsters,
-                    buried experiments, and secrets that refuse to stay buried.
-                    Welcome to the Project Titan Universe.
-                </p>
-
-                <div class="hero-buttons">
-                    <a class="button" href="#books">
-                        Start Reading
-                    </a>
-
-                    <a class="button secondary" href="#universe">
-                        Explore the Universe
-                    </a>
-                </div>
-
+    <section class="books-section" id="books">
+        <div class="books-inner">
+            <div class="books-heading">
+                <div class="section-label">Published Books</div>
+                <h2>Enter the Project Titan Universe</h2>
+                <p>Start at the beginning or continue deeper into a world shaped by extraordinary people, buried history, and consequences that reach far beyond any single story.</p>
             </div>
 
-        </section>
-
-
-        <section class="introduction" id="universe">
-
-    <div class="intro-inner">
-
-        <div class="section-label">
-            One Shared World
-        </div>
-
-        <h2>
-            Every Story Leaves a Mark
-        </h2>
-
-        <p>
-            Project Titan is a shared universe of extraordinary abilities,
-            hidden histories, human choices, and things that have existed
-            in the shadows far longer than anyone realizes.
-        </p>
-
-        <p>
-            Each series follows its own characters, conflicts, and corner
-            of the world. Some stories begin with science. Others reach
-            into something much older.
-        </p>
-
-        <p>
-            They can stand on their own, but they do not exist in isolation.
-            People cross paths. Decisions leave consequences. Events in one
-            story can reshape another.
-        </p>
-
-        <p>
-            Different stories. Different lives. One world.
-        </p>
-
-    </div>
-
-</section>
-
-
-                <section class="books-section" id="books">
-
-            <div class="books-inner">
-
-                <div class="books-heading">
-
-                    <div class="section-label">
-                        Published Books
-                    </div>
-
-                    <h2>
-                        Enter the Project Titan Universe
-                    </h2>
-
-                    <p>
-                        Start at the beginning or continue deeper into a world
-                        shaped by extraordinary people, buried history, and
-                        consequences that reach far beyond any single story.
-                    </p>
-
-                </div>
-
-                <div class="book-grid">
-
-                    <article class="book-card">
-
-                        <img
-                            class="book-cover"
-                            src="Shift.png"
-                            alt="SHIFT by Justin Nead"
-                        >
-
-                       <div class="book-content">
-                           
-                        <div class="book-series">
-                            Project Titan • Book One
-                        </div>
-
-                        <h3 class="book-title">
-                            SHIFT
-                        </h3>
-
-                        <p class="book-description">
-                            Carter Barnes was supposed to be an ordinary teenager.
-                            Then he discovered he could change the density of his
-                            own body—and opened the door to something much larger.
-                        </p>
-
+            <div class="book-grid">
+                <article class="book-card">
+                    <img class="book-cover" src="Shift.png" alt="SHIFT by Justin Nead">
+                    <div class="book-content">
+                        <div class="book-series">Project Titan • Book One</div>
+                        <h3>SHIFT</h3>
+                        <p class="book-description">Carter Barnes was supposed to be an ordinary teenager. Then he discovered he could change the density of his own body—and opened the door to something much larger.</p>
                         <div class="book-actions">
-
-                            <a
-                                class="button"
-                                href="https://a.co/d/06R2PuCq"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Buy on Amazon
-                            </a>
-
-                            <a class="button secondary" href="shift.html">
-                                Learn More
-                            </a>
-
+                            <a class="button" href="https://a.co/d/06R2PuCq" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
+                            <a class="button secondary" href="shift.html">Learn More</a>
                         </div>
-                       </div>
-                    </article>
+                    </div>
+                </article>
 
-
-                    <article class="book-card">
-
-                        <img
-                            class="book-cover"
-                            src="Imogen.png"
-                            alt="IMOGEN by Justin Nead"
-                        >
-
-                       <div class-"book-content">
-                           
-                        <div class="book-series">
-                            Project Titan • Book Two
-                        </div>
-
-                        <h3 class="book-title">
-                            IMOGEN
-                        </h3>
-
-                        <p class="book-description">
-                            Sarah Killcannon has spent years living beside the
-                            hidden consequences of Project Titan. Now those
-                            consequences are becoming impossible to ignore.
-                        </p>
-
+                <article class="book-card">
+                    <img class="book-cover" src="Imogen.png" alt="IMOGEN by Justin Nead">
+                    <div class="book-content">
+                        <div class="book-series">Project Titan • Book Two</div>
+                        <h3>IMOGEN</h3>
+                        <p class="book-description">Sarah Killcannon has spent years living beside the hidden consequences of Project Titan. Now those consequences are becoming impossible to ignore.</p>
                         <div class="book-actions">
-
-                           <a
-    class="button"
-    href="https://a.co/d/01pOTmAo"
-    target="_blank"
-    rel="noopener noreferrer"
->
-    Buy on Amazon
-</a>
-
-                            <a class="button secondary" href="imogen.html">
-                                Learn More
-                            </a>
-
+                            <a class="button" href="https://a.co/d/01pOTmAo" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
+                            <a class="button secondary" href="imogen.html">Learn More</a>
                         </div>
-                       </div>
-                    </article>
-
-                </div>
-
-
-                <div class="coming-next">
-
-                    <div class="section-label">
-                        Coming Next
                     </div>
-
-                    <h3>
-                        ALTERED
-                    </h3>
-
-                    <div class="subtitle">
-                        Project Titan — Chimera • Book One
-                    </div>
-
-                    <p>
-                        A new branch of the Project Titan Universe begins with
-                        Trisha Valdren.
-                    </p>
-
-                    <div class="book-actions">
-
-    <a
-        class="button secondary"
-        href="altered.html"
-    >
-        Learn More
-    </a>
-
-</div>
-
-                </div>
-
+                </article>
             </div>
 
-        </section>
-
-        <section class="introduction" id="characters">
-    <div class="intro-inner">
-
-        <div class="section-label">
-            Faces of the Universe
-        </div>
-
-        <h2>
-            Meet the Characters
-        </h2>
-
-        <p>
-            Every story in the Project Titan Universe begins with people.
-            Heroes, survivors, families, and those caught in the consequences
-            of a history larger than any of them realize.
-        </p>
-
-        <div class="character-grid">
-
-            <a class="character-card character-link" href="carter-barnes.html">
-                <h3>CARTER BARNES</h3>
-
-                <div class="subtitle">
-                    SHIFT
-                </div>
-
-                <p>
-                    An ordinary teenager whose discovery that he can alter
-                    the density of his own body opens the door to Project Titan.
-                </p>
-            </a>
-
-           <a class="character-card character-link" href="sarah-killcannon.html">
-                <h3>SARAH KILLCANNON</h3>
-
-                <div class="subtitle">
-                    IMOGEN
-                </div>
-
-                <p>
-                    A young woman who has spent years living beside the hidden
-                    consequences of Project Titan—and can no longer remain
-                    outside them.
-                </p>
-            </a>
-<a class="character-card character-link" href="trisha-valdren.html">
-
-    <h3>TRISHA VALDREN</h3>
-
-    <div class="subtitle">
-        ALTERED
-    </div>
-
-    <p>
-        A nineteen-year-old in Carver whose ordinary life is suddenly
-        changed by circumstances she never saw coming.
-    </p>
-
-</a>
-        </div>
-
-    </div>
-        </section>
-
-        <section class="introduction" id="about">
-
-    <div class="intro-inner">
-
-        <div class="section-label">
-            About the Author
-        </div>
-
-        <h2>
-            Justin Nead
-        </h2>
-
-        <p>
-            Justin Nead is the creator and author of the Project Titan Universe,
-            a growing shared world built around extraordinary people, hidden
-            histories, difficult choices, and stories whose consequences reach
-            far beyond a single book.
-        </p>
-
-        <p>
-            Project Titan brings together superhero fiction, grounded science
-            fiction, thriller elements, and the supernatural within one
-            connected universe.
-        </p>
-
-        <p>
-            SHIFT and IMOGEN are available now, with more stories from the
-            Project Titan Universe on the way.
-        </p>
-
-    </div>
-
-</section>
-
-      <section class="introduction" id="news">
-
-    <div class="intro-inner">
-
-        <div class="section-label">
-            Latest Updates
-        </div>
-
-        <h2>
-            From the Project Titan Universe
-        </h2>
-
-        <p>
-            Follow the latest releases, upcoming stories, character reveals,
-            and developments from across the Project Titan Universe.
-        </p>
-
-        <div class="news-grid">
-
-            <div class="news-card">
-
-                <div class="subtitle">
-                    September 16, 2026 • Site Update
-                </div>
-
-                <h3>Official Website Now Live</h3>
-
-                <p>
-                    The Project Titan Universe now has an official home for
-                    books, characters, universe information, and future releases.
-                    SHIFT and IMOGEN are available now, with ALTERED currently
-                    in development as the next Project Titan story.
-                </p>
-
-            </div>
-
-
-            <div class="news-card">
-
-                <div class="subtitle">
-                    Available Now
-                </div>
-
-                <h3>SHIFT</h3>
-
-                <p>
-                    Project Titan • Book One
-                </p>
-
-                <p>
-                    Carter Barnes opens the Project Titan Universe as one
-                    discovery changes everything he thought he knew about
-                    himself and the world around him.
-                </p>
-
-                <div class="book-actions">
-
-                    <a
-                        class="button secondary"
-                        href="shift.html"
-                    >
-                        View SHIFT
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <div class="news-card">
-
-                <div class="subtitle">
-                    Available Now
-                </div>
-
-                <h3>IMOGEN</h3>
-
-                <p>
-                    Project Titan • Book Two
-                </p>
-
-                <p>
-                    Sarah Killcannon steps into the center of a world she
-                    has spent years living beside as the consequences of
-                    Project Titan continue to surface.
-                </p>
-
-                <div class="book-actions">
-
-                    <a
-                        class="button secondary"
-                        href="imogen.html"
-                    >
-                        View IMOGEN
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <div class="news-card">
-
-                <div class="subtitle">
-                    In Development
-                </div>
-
+            <div class="coming-next">
+                <div class="section-label">Coming Next</div>
                 <h3>ALTERED</h3>
-
-                <p>
-                    Project Titan — Chimera • Book One
-                </p>
-
-                <p>
-                    Trisha Valdren begins a new branch of the Project Titan
-                    Universe in Carver as the Chimera story takes shape.
-                </p>
-
+                <div class="subtitle">Project Titan — Chimera • Book One</div>
+                <p>A new branch of the Project Titan Universe begins with Trisha Valdren.</p>
                 <div class="book-actions">
+                    <a class="button secondary" href="altered.html">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                    <a
-                        class="button secondary"
-                        href="altered.html"
-                    >
-                        Follow ALTERED
-                    </a>
+    <section class="introduction" id="characters">
+        <div class="intro-inner">
+            <div class="section-label">Faces of the Universe</div>
+            <h2>Meet the Characters</h2>
+            <p>Every story in the Project Titan Universe begins with people. Heroes, survivors, families, and those caught in the consequences of a history larger than any of them realize.</p>
 
+            <div class="character-grid">
+                <a class="character-card character-link" href="carter-barnes.html">
+                    <h3>CARTER BARNES</h3>
+                    <div class="subtitle">SHIFT</div>
+                    <p>An ordinary teenager whose discovery that he can alter the density of his own body opens the door to Project Titan.</p>
+                </a>
+
+                <a class="character-card character-link" href="sarah-killcannon.html">
+                    <h3>SARAH KILLCANNON</h3>
+                    <div class="subtitle">IMOGEN</div>
+                    <p>A young woman who has spent years living beside the hidden consequences of Project Titan—and can no longer remain outside them.</p>
+                </a>
+
+                <a class="character-card character-link" href="trisha-valdren.html">
+                    <h3>TRISHA VALDREN</h3>
+                    <div class="subtitle">ALTERED</div>
+                    <p>A nineteen-year-old in Carver whose ordinary life is suddenly changed by circumstances she never saw coming.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="introduction" id="about">
+        <div class="intro-inner">
+            <div class="section-label">About the Author</div>
+            <h2>Justin Nead</h2>
+            <p>Justin Nead is the creator and author of the Project Titan Universe, a growing shared world built around extraordinary people, hidden histories, difficult choices, and stories whose consequences reach far beyond a single book.</p>
+            <p>Project Titan brings together superhero fiction, grounded science fiction, thriller elements, and the supernatural within one connected universe.</p>
+            <p>SHIFT and IMOGEN are available now, with more stories from the Project Titan Universe on the way.</p>
+        </div>
+    </section>
+
+    <section class="introduction" id="news">
+        <div class="intro-inner">
+            <div class="section-label">Latest Updates</div>
+            <h2>From the Project Titan Universe</h2>
+            <p>Follow the latest releases, upcoming stories, character reveals, and developments from across the Project Titan Universe.</p>
+
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="subtitle">September 16, 2026 • Site Update</div>
+                    <h3>Official Website Now Live</h3>
+                    <p>The Project Titan Universe now has an official home for books, characters, universe information, and future releases. SHIFT and IMOGEN are available now, with ALTERED currently in development as the next Project Titan story.</p>
                 </div>
 
+                <div class="news-card">
+                    <div class="subtitle">Available Now</div>
+                    <h3>SHIFT</h3>
+                    <p>Project Titan • Book One</p>
+                    <p>Carter Barnes opens the Project Titan Universe as one discovery changes everything he thought he knew about himself and the world around him.</p>
+                    <div class="book-actions">
+                        <a class="button secondary" href="shift.html">View SHIFT</a>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <div class="subtitle">Available Now</div>
+                    <h3>IMOGEN</h3>
+                    <p>Project Titan • Book Two</p>
+                    <p>Sarah Killcannon steps into the center of a world she has spent years living beside as the consequences of Project Titan continue to surface.</p>
+                    <div class="book-actions">
+                        <a class="button secondary" href="imogen.html">View IMOGEN</a>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <div class="subtitle">In Development</div>
+                    <h3>ALTERED</h3>
+                    <p>Project Titan — Chimera • Book One</p>
+                    <p>Trisha Valdren begins a new branch of the Project Titan Universe in Carver as the Chimera story takes shape.</p>
+                    <div class="book-actions">
+                        <a class="button secondary" href="altered.html">Follow ALTERED</a>
+                    </div>
+                </div>
             </div>
-
         </div>
+    </section>
+</main>
 
+<footer>
+    <div class="footer-name">Project Titan Universe</div>
+    <div class="copyright">&copy; 2026 Justin Nead. All rights reserved.</div>
+    <div class="footer-contact">Author Contact: <a href="mailto:projecttitanuniverse@gmail.com">projecttitanuniverse@gmail.com</a></div>
+    <div class="footer-links">
+        <a href="https://www.goodreads.com/user/show/77642333-justin-nead" target="_blank" rel="noopener noreferrer">Goodreads</a>
     </div>
-
-</section>
-
-    </main>
-
-
-    <footer>
-
-        <div class="footer-name">
-            Project Titan Universe
-        </div>
-
-        <div class="copyright">
-            &copy; 2026 Justin Nead. All rights reserved.
-        </div>
-
-        <div class="footer-contact">
-            Author Contact:
-            <a href="mailto:projecttitanuniverse@gmail.com">projecttitanuniverse@gmail.com</a>
-        </div>
-
-        <div class="footer-links">
-            <a
-                href="https://www.goodreads.com/user/show/77642333-justin-nead"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Goodreads
-            </a>
-        </div>
-
-    </footer>
-
+</footer>
 </body>
 </html>

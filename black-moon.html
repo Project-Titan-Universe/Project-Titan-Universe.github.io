@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BLACK MOON | Project Titan Universe</title>
+    <meta name="description" content="BLACK MOON explores the supernatural side of the Project Titan Universe, where science does not explain everything and darker truths have always existed in the shadows.">
+    <link rel="canonical" href="https://project-titan-universe.github.io/black-moon.html">
+    <link rel="icon" href="favicon.ico" sizes="any">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="BLACK MOON | Project Titan Universe">
+    <meta property="og:description" content="The supernatural side of the Project Titan Universe. Same world. Darker truths.">
+    <meta property="og:url" content="https://project-titan-universe.github.io/black-moon.html">
+    <meta property="og:image" content="https://project-titan-universe.github.io/social-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Project Titan Universe by Justin Nead">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BLACK MOON | Project Titan Universe">
+    <meta name="twitter:description" content="The supernatural side of the Project Titan Universe. Same world. Darker truths.">
+    <meta name="twitter:image" content="https://project-titan-universe.github.io/social-preview.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CreativeWorkSeries",
+          "@id": "https://project-titan-universe.github.io/black-moon.html#series",
+          "name": "Black Moon",
+          "url": "https://project-titan-universe.github.io/black-moon.html",
+          "creator": {
+            "@id": "https://project-titan-universe.github.io/#author"
+          },
+          "isPartOf": {
+            "@id": "https://project-titan-universe.github.io/#universe"
+          },
+          "description": "The supernatural side of the Project Titan Universe, where science does not explain everything and darker truths have always existed in the shadows."
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://project-titan-universe.github.io/black-moon.html#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Project Titan Universe",
+              "item": "https://project-titan-universe.github.io/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Black Moon",
+              "item": "https://project-titan-universe.github.io/black-moon.html"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        * { box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            background: #030405;
+            color: #ece9e3;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.65;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(3, 4, 5, 0.95);
+            border-bottom: 1px solid #292b31;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: auto;
+            min-height: 76px;
+            padding: 0 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .site-name {
+            color: #ece9e3;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #9fa1aa;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        nav a:hover { color: #ffffff; }
+
+        .hero {
+            min-height: 78vh;
+            padding: 90px 6%;
+            display: flex;
+            align-items: center;
+            background:
+                radial-gradient(circle at 72% 42%, rgba(188, 194, 210, 0.10), transparent 17%),
+                radial-gradient(circle at 72% 42%, rgba(255, 255, 255, 0.035), transparent 31%),
+                linear-gradient(135deg, #07080a 0%, #030405 56%, #09090d 100%);
+        }
+
+        .hero-inner {
+            width: min(1120px, 100%);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .eyebrow,
+        .section-label {
+            color: #a9abb7;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 14px 0 0;
+            font-size: clamp(4rem, 10vw, 8rem);
+            line-height: 0.88;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .tagline {
+            margin: 28px 0 0;
+            color: #d4d1ca;
+            font-size: clamp(1.35rem, 3vw, 2rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .hero-copy {
+            max-width: 720px;
+            margin-top: 28px;
+            color: #b6b5b7;
+            font-size: 1.08rem;
+        }
+
+        .status {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 9px 13px;
+            border: 1px solid #3f414a;
+            color: #b9bbc5;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+
+        .moon-mark {
+            width: min(320px, 72vw);
+            aspect-ratio: 1;
+            margin: auto;
+            border-radius: 50%;
+            border: 1px solid #41434c;
+            background:
+                radial-gradient(circle at 40% 35%, rgba(255,255,255,0.18), transparent 5%),
+                radial-gradient(circle at 58% 46%, rgba(255,255,255,0.08), transparent 7%),
+                radial-gradient(circle at 44% 63%, rgba(255,255,255,0.09), transparent 9%),
+                radial-gradient(circle at 50% 50%, #454750 0%, #25262c 45%, #101115 72%, #060709 100%);
+            box-shadow: 0 0 80px rgba(185, 190, 210, 0.10);
+            position: relative;
+        }
+
+        .moon-mark::after {
+            content: "";
+            position: absolute;
+            inset: -1px;
+            border-radius: 50%;
+            background: #030405;
+            transform: translateX(38%);
+            box-shadow: -16px 0 35px rgba(0,0,0,0.7);
+        }
+
+        .section {
+            padding: 85px 6%;
+            border-top: 1px solid #202127;
+        }
+
+        .section.alt { background: #07080a; }
+
+        .section-inner {
+            width: min(950px, 100%);
+            margin: 0 auto;
+        }
+
+        h2 {
+            margin: 12px 0 28px;
+            font-size: clamp(2rem, 5vw, 3.7rem);
+            line-height: 1.05;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .section p {
+            max-width: 850px;
+            color: #b8b7ba;
+            font-size: 1.05rem;
+        }
+
+        .statement {
+            margin: 34px 0;
+            padding: 30px;
+            border-left: 2px solid #777a87;
+            background: #0b0c0f;
+            color: #dfdce0;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .reader-advisory {
+            margin-top: 36px;
+            padding: 24px 26px;
+            border: 1px solid #514437;
+            background: #0d0c0a;
+        }
+
+        .reader-advisory strong {
+            display: block;
+            margin-bottom: 8px;
+            color: #d6b57d;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            font-size: 0.76rem;
+        }
+
+        .reader-advisory p {
+            margin: 0;
+            color: #cbc5bb;
+            font-size: 0.96rem;
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 36px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 13px 22px;
+            border: 1px solid #6d707b;
+            color: #e2e2e5;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.13em;
+            font-size: 0.73rem;
+            font-weight: 700;
+        }
+
+        .button:hover {
+            background: #d7d8de;
+            color: #050607;
+        }
+
+        footer {
+            padding: 30px 6%;
+            border-top: 1px solid #202127;
+            color: #747780;
+            font-size: 0.78rem;
+        }
+
+        .footer-inner {
+            max-width: 1400px;
+            margin: auto;
+        }
+
+        @media (max-width: 850px) {
+            .nav-container {
+                align-items: flex-start;
+                flex-direction: column;
+                padding-top: 18px;
+                padding-bottom: 18px;
+            }
+
+            nav { gap: 14px; }
+
+            .hero-inner {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .moon-mark { order: -1; }
+        }
+
+        @media (max-width: 550px) {
+            nav a { font-size: 0.67rem; }
+            .hero, .section { padding-left: 7%; padding-right: 7%; }
+        }
+    </style>
+</head>
+
+<body>
+<header>
+    <div class="nav-container">
+        <a class="site-name" href="index.html">Project Titan Universe</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html#books">Books</a>
+            <a href="index.html#universe">Universe</a>
+            <a href="index.html#characters">Characters</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#news">News</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="hero-inner">
+            <div>
+                <div class="eyebrow">The Supernatural Side of the Project Titan Universe</div>
+                <h1>Black<br>Moon</h1>
+                <div class="tagline">Science Doesn't Explain Everything.</div>
+                <p class="hero-copy">Titans aren't the only extraordinary things in this world. Some secrets were never created in a laboratory. Some have been here far longer than anyone realizes.</p>
+                <div class="status">Series in Development</div>
+            </div>
+
+            <div class="moon-mark" aria-hidden="true"></div>
+        </div>
+    </section>
+
+    <section class="section alt">
+        <div class="section-inner">
+            <div class="section-label">Same World. Darker Truths.</div>
+            <h2>It Has Been Here the Entire Time</h2>
+            <p>Black Moon is not another universe. It is the supernatural side of the Project Titan Universe—the same contemporary world seen through a different set of shadows.</p>
+            <p>Vampires. Werewolves. Demons. Magic. Things that people dismiss as myth, superstition, or stories told to explain what they do not understand.</p>
+            <div class="statement">Not everything extraordinary was created by Project Titan. Not everything can be explained by science.</div>
+            <p>Black Moon follows the people who live in that hidden world and the consequences that come when what has stayed concealed begins to move closer to the surface.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-inner">
+            <div class="section-label">Reader Advisory</div>
+            <h2>A Darker Branch of the Universe</h2>
+            <p>Black Moon is written for a more mature audience than the original Project Titan series.</p>
+
+            <div class="reader-advisory">
+                <strong>Reader Advisory</strong>
+                <p>Black Moon may include stronger language, graphic violence, sexual content, disturbing situations, horror elements, and other adult themes. Reader discretion is advised.</p>
+            </div>
+
+            <div class="actions">
+                <a class="button" href="index.html#universe">Explore the Universe</a>
+                <a class="button" href="index.html#books">Project Titan Books</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-inner">© 2026 Justin Nead • Project Titan Universe</div>
+</footer>
+</body>
+</html>

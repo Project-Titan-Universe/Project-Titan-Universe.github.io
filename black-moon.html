@@ -122,61 +122,60 @@
         nav a:hover { color: #ffffff; }
 
         .hero {
-            min-height: 78vh;
-            padding: 90px 6%;
-            display: flex;
-            align-items: center;
+            padding: 56px 5% 70px;
             background:
-                radial-gradient(circle at 72% 42%, rgba(188, 194, 210, 0.10), transparent 17%),
-                radial-gradient(circle at 72% 42%, rgba(255, 255, 255, 0.035), transparent 31%),
-                linear-gradient(135deg, #07080a 0%, #030405 56%, #09090d 100%);
+                radial-gradient(circle at 50% 18%, rgba(188, 194, 210, 0.08), transparent 32%),
+                linear-gradient(180deg, #07080a 0%, #030405 100%);
+            border-bottom: 1px solid #202127;
         }
 
         .hero-inner {
-            width: min(1120px, 100%);
+            width: min(1320px, 100%);
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 360px;
-            gap: 70px;
-            align-items: center;
+            text-align: center;
         }
 
-        .eyebrow,
-        .section-label {
-            color: #a9abb7;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 0.25em;
-            text-transform: uppercase;
+        .hero-art {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 760px;
+            object-fit: cover;
+            margin: 0 auto;
+            box-shadow: 0 30px 90px rgba(0, 0, 0, 0.48);
         }
 
-        h1 {
-            margin: 14px 0 0;
-            font-size: clamp(4rem, 10vw, 8rem);
-            line-height: 0.88;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
         }
 
         .tagline {
-            margin: 28px 0 0;
+            margin: 34px 0 0;
             color: #d4d1ca;
-            font-size: clamp(1.35rem, 3vw, 2rem);
+            font-size: clamp(1.3rem, 3vw, 2rem);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.06em;
         }
 
         .hero-copy {
-            max-width: 720px;
-            margin-top: 28px;
+            max-width: 760px;
+            margin: 22px auto 0;
             color: #b6b5b7;
             font-size: 1.08rem;
         }
 
         .status {
             display: inline-block;
-            margin-top: 30px;
+            margin-top: 26px;
             padding: 9px 13px;
             border: 1px solid #3f414a;
             color: #b9bbc5;
@@ -184,31 +183,6 @@
             letter-spacing: 0.15em;
             font-size: 0.7rem;
             font-weight: 700;
-        }
-
-        .moon-mark {
-            width: min(320px, 72vw);
-            aspect-ratio: 1;
-            margin: auto;
-            border-radius: 50%;
-            border: 1px solid #41434c;
-            background:
-                radial-gradient(circle at 40% 35%, rgba(255,255,255,0.18), transparent 5%),
-                radial-gradient(circle at 58% 46%, rgba(255,255,255,0.08), transparent 7%),
-                radial-gradient(circle at 44% 63%, rgba(255,255,255,0.09), transparent 9%),
-                radial-gradient(circle at 50% 50%, #454750 0%, #25262c 45%, #101115 72%, #060709 100%);
-            box-shadow: 0 0 80px rgba(185, 190, 210, 0.10);
-            position: relative;
-        }
-
-        .moon-mark::after {
-            content: "";
-            position: absolute;
-            inset: -1px;
-            border-radius: 50%;
-            background: #030405;
-            transform: translateX(38%);
-            box-shadow: -16px 0 35px rgba(0,0,0,0.7);
         }
 
         .section {
@@ -221,6 +195,14 @@
         .section-inner {
             width: min(950px, 100%);
             margin: 0 auto;
+        }
+
+        .section-label {
+            color: #a9abb7;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
         }
 
         h2 {
@@ -314,18 +296,13 @@
             }
 
             nav { gap: 14px; }
-
-            .hero-inner {
-                grid-template-columns: 1fr;
-                gap: 48px;
-            }
-
-            .moon-mark { order: -1; }
+            .hero { padding-top: 36px; }
         }
 
         @media (max-width: 550px) {
             nav a { font-size: 0.67rem; }
             .hero, .section { padding-left: 7%; padding-right: 7%; }
+            .hero-art { box-shadow: 0 18px 45px rgba(0, 0, 0, 0.42); }
         }
     </style>
 </head>
@@ -348,15 +325,15 @@
 <main>
     <section class="hero">
         <div class="hero-inner">
-            <div>
-                <div class="eyebrow">The Supernatural Side of the Project Titan Universe</div>
-                <h1>Black<br>Moon</h1>
-                <div class="tagline">Science Doesn't Explain Everything.</div>
-                <p class="hero-copy">Titans aren't the only extraordinary things in this world. Some secrets were never created in a laboratory. Some have been here far longer than anyone realizes.</p>
-                <div class="status">Series in Development</div>
-            </div>
-
-            <div class="moon-mark" aria-hidden="true"></div>
+            <h1 class="visually-hidden">Black Moon</h1>
+            <img
+                class="hero-art"
+                src="Black-moon-logo.png"
+                alt="Black Moon — Project Titan Universe hero artwork"
+            >
+            <div class="tagline">Science Doesn't Explain Everything.</div>
+            <p class="hero-copy">Titans aren't the only extraordinary things in this world. Some secrets were never created in a laboratory. Some have been here far longer than anyone realizes.</p>
+            <div class="status">Series in Development</div>
         </div>
     </section>
 

@@ -118,7 +118,7 @@
         nav {
             display: flex;
             align-items: center;
-            gap: 30px;
+            gap: 26px;
         }
 
         nav a {
@@ -267,7 +267,8 @@
         }
 
         .introduction h2,
-        .books-heading h2 {
+        .books-heading h2,
+        .series-heading h2 {
             font-size: clamp(2rem, 5vw, 3.4rem);
             line-height: 1.1;
             letter-spacing: 0.04em;
@@ -276,7 +277,8 @@
         }
 
         .introduction p,
-        .books-heading p {
+        .books-heading p,
+        .series-heading p {
             color: #aaa7a1;
             max-width: 720px;
             margin: 0 auto 18px;
@@ -308,8 +310,130 @@
             font-size: 0.92rem;
         }
 
-        .reader-advisory .book-actions {
-            margin-top: 16px;
+        .series-section {
+            padding: 95px 6%;
+            background: #050607;
+            border-top: 1px solid #1c1e20;
+            border-bottom: 1px solid #1c1e20;
+        }
+
+        .series-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .series-heading {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .series-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .series-card {
+            min-height: 320px;
+            padding: 34px;
+            border: 1px solid #37332d;
+            background: #0b0d0e;
+            color: #f1eee8;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+
+        .series-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #9f7b4d;
+        }
+
+        .series-card:hover {
+            transform: translateY(-4px);
+            border-color: #77644c;
+        }
+
+        .series-card.chimera {
+            border-color: #2d3c36;
+            background: radial-gradient(circle at top right, rgba(87, 119, 103, 0.10), transparent 38%), #0a0d0b;
+        }
+
+        .series-card.chimera::before {
+            background: #728d80;
+        }
+
+        .series-card.chimera:hover {
+            border-color: #657a70;
+        }
+
+        .series-card.black-moon {
+            border-color: #30333d;
+            background: radial-gradient(circle at top right, rgba(110, 120, 150, 0.12), transparent 38%), #08090c;
+        }
+
+        .series-card.black-moon::before {
+            background: #8f96aa;
+        }
+
+        .series-card.black-moon:hover {
+            border-color: #686e80;
+        }
+
+        .series-kicker {
+            margin-bottom: 18px;
+            color: #b9915b;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .series-card.chimera .series-kicker {
+            color: #9cb5a9;
+        }
+
+        .series-card.black-moon .series-kicker {
+            color: #aeb4c6;
+        }
+
+        .series-card h3 {
+            margin: 0 0 18px;
+            font-size: 1.75rem;
+            line-height: 1.1;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .series-card p {
+            margin: 0 0 28px;
+            color: #b8b6b1;
+            line-height: 1.7;
+        }
+
+        .series-cta {
+            margin-top: auto;
+            color: #d7c5a9;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        .series-card.chimera .series-cta {
+            color: #b8cec3;
+        }
+
+        .series-card.black-moon .series-cta {
+            color: #c3c8d8;
         }
 
         .books-section {
@@ -524,6 +648,16 @@
             color: #e2b978;
         }
 
+        @media (max-width: 950px) {
+            .series-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .series-card {
+                min-height: 0;
+            }
+        }
+
         @media (max-width: 850px) {
             .book-card,
             .book-card:nth-child(even) {
@@ -602,7 +736,8 @@
                 grid-template-columns: 1fr;
             }
 
-            .character-card {
+            .character-card,
+            .series-card {
                 padding: 26px;
             }
 
@@ -619,6 +754,7 @@
         <a class="site-name" href="#">Project Titan Universe</a>
         <nav>
             <a href="#">Home</a>
+            <a href="#series">Series</a>
             <a href="#books">Books</a>
             <a href="#universe">Universe</a>
             <a href="#characters">Characters</a>
@@ -641,7 +777,7 @@
             </p>
             <div class="hero-buttons">
                 <a class="button" href="#books">Start Reading</a>
-                <a class="button secondary" href="#universe">Explore the Universe</a>
+                <a class="button secondary" href="#series">Explore the Series</a>
             </div>
         </div>
     </section>
@@ -658,9 +794,39 @@
             <div class="reader-advisory">
                 <strong>Reader Advisory</strong>
                 <p>The original Project Titan series is generally suitable for teen and adult readers. Project Titan — Chimera and Black Moon explore more mature subject matter and may include stronger language, graphic violence, sexual content, disturbing situations, and other adult themes. Reader discretion is advised.</p>
-                <div class="book-actions">
-                    <a class="button secondary" href="black-moon.html">Explore Black Moon</a>
-                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="series-section" id="series">
+        <div class="series-inner">
+            <div class="series-heading">
+                <div class="section-label">Three Branches. One Universe.</div>
+                <h2>Explore the Series</h2>
+                <p>Each branch of the Project Titan Universe tells a different kind of story while sharing the same world, history, and consequences.</p>
+            </div>
+
+            <div class="series-grid">
+                <a class="series-card" href="#books">
+                    <div class="series-kicker">Core Series</div>
+                    <h3>Project Titan</h3>
+                    <p>Grounded superhero science fiction centered on extraordinary abilities, buried experiments, and the people forced to live with what Project Titan left behind.</p>
+                    <div class="series-cta">Explore Project Titan →</div>
+                </a>
+
+                <a class="series-card chimera" href="altered.html">
+                    <div class="series-kicker">Mature Branch</div>
+                    <h3>Project Titan — Chimera</h3>
+                    <p>A more mature branch of the universe focused on survival, identity, hard choices, and the lives shaped by consequences long before the larger world comes calling.</p>
+                    <div class="series-cta">Explore Chimera →</div>
+                </a>
+
+                <a class="series-card black-moon" href="black-moon.html">
+                    <div class="series-kicker">Supernatural Branch</div>
+                    <h3>Black Moon</h3>
+                    <p>Vampires, werewolves, demons, magic, and the darker truths that have existed in the Project Titan Universe all along. Science does not explain everything.</p>
+                    <div class="series-cta">Explore Black Moon →</div>
+                </a>
             </div>
         </div>
     </section>

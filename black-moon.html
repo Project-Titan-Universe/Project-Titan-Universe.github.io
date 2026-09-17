@@ -229,6 +229,54 @@
             font-weight: 700;
         }
 
+        .inside-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+            margin-top: 42px;
+        }
+
+        .inside-card {
+            min-height: 290px;
+            padding: 30px 26px;
+            border: 1px solid #30343d;
+            background:
+                linear-gradient(180deg, rgba(26, 30, 38, 0.74), rgba(8, 9, 12, 0.96));
+            display: flex;
+            flex-direction: column;
+        }
+
+        .inside-number {
+            color: #737986;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        .inside-card h3 {
+            margin: 20px 0 14px;
+            font-size: 1.5rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .inside-card p {
+            margin: 0;
+            color: #b8bcc4;
+            font-size: 0.96rem;
+            line-height: 1.75;
+        }
+
+        .inside-card::after {
+            content: "";
+            width: 42px;
+            height: 1px;
+            margin-top: auto;
+            padding-top: 24px;
+            border-bottom: 1px solid #777d89;
+        }
+
         .reader-advisory {
             margin-top: 36px;
             padding: 24px 26px;
@@ -297,6 +345,8 @@
 
             nav { gap: 14px; }
             .hero { padding-top: 36px; }
+            .inside-grid { grid-template-columns: 1fr; }
+            .inside-card { min-height: 0; }
         }
 
         @media (max-width: 550px) {
@@ -313,6 +363,7 @@
         <a class="site-name" href="index.html">Project Titan Universe</a>
         <nav>
             <a href="index.html">Home</a>
+            <a href="#inside">Inside Black Moon</a>
             <a href="index.html#books">Books</a>
             <a href="index.html#universe">Universe</a>
             <a href="index.html#characters">Characters</a>
@@ -348,7 +399,35 @@
         </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="inside">
+        <div class="section-inner">
+            <div class="section-label">Inside Black Moon</div>
+            <h2>The World Behind the Shadows</h2>
+            <p>Black Moon opens a side of the universe most people never see. The supernatural has its own dangers, traditions, and ways of surviving—hidden beside ordinary life.</p>
+
+            <div class="inside-grid">
+                <article class="inside-card">
+                    <div class="inside-number">01 • Creatures</div>
+                    <h3>Things That Shouldn't Exist</h3>
+                    <p>Vampires, werewolves, demons, and other beings move through the same world as everyone else. Some hide in plain sight. Others survive because most people refuse to believe they exist.</p>
+                </article>
+
+                <article class="inside-card">
+                    <div class="inside-number">02 • Magic</div>
+                    <h3>Power With Consequences</h3>
+                    <p>Magic is real, carried through knowledge and traditions kept outside ordinary sight. It has rules, risks, and consequences—and knowing how to use it does not make anyone safe from it.</p>
+                </article>
+
+                <article class="inside-card">
+                    <div class="inside-number">03 • The Hidden World</div>
+                    <h3>Secrecy Is Survival</h3>
+                    <p>The supernatural survives because it stays hidden. Families, hunters, institutions, predators, and ordinary people cross paths while the wider world remains unaware of what exists just beyond what it can explain.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section alt">
         <div class="section-inner">
             <div class="section-label">Reader Advisory</div>
             <h2>A Darker Branch of the Universe</h2>

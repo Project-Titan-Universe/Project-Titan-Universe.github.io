@@ -41,6 +41,21 @@
           "isPartOf": {
             "@type": "BookSeries",
             "name": "Project Titan"
+          },
+          "subjectOf": {
+            "@id": "https://project-titan-universe.github.io/shift.html#trailer"
+          }
+        },
+        {
+          "@type": "VideoObject",
+          "@id": "https://project-titan-universe.github.io/shift.html#trailer",
+          "name": "SHIFT | Official Book Trailer | Project Titan Book One",
+          "description": "The official book trailer for SHIFT, Project Titan Book One by Justin Nead.",
+          "embedUrl": "https://www.youtube.com/embed/ASiYxNVf1P0",
+          "contentUrl": "https://youtu.be/ASiYxNVf1P0",
+          "url": "https://youtu.be/ASiYxNVf1P0",
+          "isPartOf": {
+            "@id": "https://project-titan-universe.github.io/shift.html#book"
           }
         },
         {
@@ -210,6 +225,59 @@
             color: #cbd8d2;
         }
 
+        .trailer-section {
+            margin-top: 80px;
+            padding-top: 55px;
+            border-top: 1px solid rgba(232, 253, 242, 0.12);
+            text-align: center;
+        }
+
+        .trailer-section .series-label {
+            margin-bottom: 10px;
+        }
+
+        .trailer-section h2 {
+            font-size: clamp(2rem, 5vw, 3.3rem);
+            line-height: 1.1;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .trailer-copy {
+            max-width: 680px;
+            margin: 0 auto 30px;
+            color: #c6d6cf;
+        }
+
+        .trailer-frame {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            border: 1px solid rgba(232, 253, 242, 0.18);
+            background: #000000;
+            box-shadow: 0 22px 60px rgba(0, 0, 0, 0.45);
+        }
+
+        .trailer-frame iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .trailer-actions {
+            margin-top: 24px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
         .back-link {
             margin-top: 70px;
             padding-top: 30px;
@@ -257,6 +325,11 @@
             .book-cover {
                 max-width: 330px;
                 margin: auto;
+            }
+
+            .trailer-section {
+                margin-top: 60px;
+                padding-top: 40px;
             }
         }
     </style>
@@ -329,6 +402,37 @@
             </div>
         </div>
 
+    </section>
+
+    <section class="trailer-section" aria-labelledby="shift-trailer-heading">
+        <p class="series-label">Official Book Trailer</p>
+        <h2 id="shift-trailer-heading">Watch SHIFT</h2>
+        <p class="trailer-copy">
+            Carter Barnes was normal. Until he wasn’t. Watch the official trailer for
+            Project Titan Book One.
+        </p>
+
+        <div class="trailer-frame">
+            <iframe
+                src="https://www.youtube-nocookie.com/embed/ASiYxNVf1P0"
+                title="SHIFT | Official Book Trailer | Project Titan Book One"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+            ></iframe>
+        </div>
+
+        <div class="trailer-actions">
+            <a
+                class="button secondary"
+                href="https://youtu.be/ASiYxNVf1P0"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Watch on YouTube
+            </a>
+        </div>
     </section>
 
     <div class="back-link">

@@ -1,0 +1,65 @@
+name: Add Amazon author link
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/add-amazon-author-link.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update-site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Add Amazon Author Page to homepage identity links
+        shell: python
+        run: |
+          from pathlib import Path
+
+          path = Path('index.html')
+          text = path.read_text(encoding='utf-8')
+
+          old_schema = '''          "sameAs": [
+            "https://www.goodreads.com/user/show/77642333-justin-nead",
+            "https://www.youtube.com/@ProjectTitanUniverse"
+          ]'''
+          new_schema = '''          "sameAs": [
+            "https://www.goodreads.com/user/show/77642333-justin-nead",
+            "https://www.amazon.com/author/justinnead",
+            "https://www.youtube.com/@ProjectTitanUniverse"
+          ]'''
+
+          old_footer = '''        <a href="https://www.goodreads.com/user/show/77642333-justin-nead" target="_blank" rel="noopener noreferrer">Goodreads</a>
+        &nbsp;•&nbsp;
+        <a href="https://www.youtube.com/@ProjectTitanUniverse" target="_blank" rel="noopener noreferrer">YouTube</a>'''
+          new_footer = '''        <a href="https://www.goodreads.com/user/show/77642333-justin-nead" target="_blank" rel="noopener noreferrer">Goodreads</a>
+        &nbsp;•&nbsp;
+        <a href="https://www.amazon.com/author/justinnead" target="_blank" rel="noopener noreferrer">Amazon Author Page</a>
+        &nbsp;•&nbsp;
+        <a href="https://www.youtube.com/@ProjectTitanUniverse" target="_blank" rel="noopener noreferrer">YouTube</a>'''
+
+          if old_schema not in text:
+              raise SystemExit('Expected sameAs block not found')
+          if old_footer not in text:
+              raise SystemExit('Expected footer links block not found')
+
+          text = text.replace(old_schema, new_schema, 1)
+          text = text.replace(old_footer, new_footer, 1)
+          path.write_text(text, encoding='utf-8')
+
+      - name: Remove one-time workflow
+        run: rm .github/workflows/add-amazon-author-link.yml
+
+      - name: Commit site update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html .github/workflows/add-amazon-author-link.yml
+          git commit -m "Add Amazon author page link"
+          git push

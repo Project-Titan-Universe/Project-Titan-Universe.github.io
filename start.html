@@ -164,11 +164,15 @@
             color: #ffffff;
         }
 
-        .button-row {
-            margin-top: 32px;
+        .button-row,
+        .final-cta {
             display: flex;
             flex-wrap: wrap;
             gap: 14px;
+        }
+
+        .button-row {
+            margin-top: 32px;
         }
 
         .button {
@@ -208,7 +212,8 @@
             padding: 92px 6%;
         }
 
-        .why-section {
+        .why-section,
+        .stay-section {
             background: #080a0c;
         }
 
@@ -237,7 +242,7 @@
 
         .center-heading p,
         .why-copy p,
-        .stay-card p {
+        .stay-intro p {
             color: #aaa7a1;
         }
 
@@ -321,44 +326,33 @@
             color: #9cb5a9;
         }
 
-        .path-arrow {
-            display: none;
-        }
-
-        .stay-section {
-            background: #080a0c;
-        }
-
-        .stay-card {
-            max-width: 820px;
+        .stay-inner {
+            max-width: 980px;
             margin: 0 auto;
-            padding: 42px;
-            border: 1px solid #4c4030;
-            background: #0d0c0a;
+        }
+
+        .stay-intro {
+            max-width: 760px;
+            margin: 0 auto 34px;
             text-align: center;
         }
 
-        .stay-card h2 {
+        .stay-intro h2 {
             margin-bottom: 14px;
         }
 
-        .coming-soon {
-            display: inline-block;
-            margin-top: 24px;
-            padding: 10px 16px;
-            border: 1px solid #5b4a34;
-            color: #c8ad82;
-            text-transform: uppercase;
-            letter-spacing: 0.14em;
-            font-size: 0.7rem;
+        .kit-form-wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            border: 1px solid #4c4030;
+            background: #060809;
+            box-shadow: 0 22px 55px rgba(0, 0, 0, 0.32);
+            overflow: hidden;
         }
 
         .final-cta {
-            margin-top: 30px;
-            display: flex;
+            margin-top: 34px;
             justify-content: center;
-            flex-wrap: wrap;
-            gap: 14px;
         }
 
         footer {
@@ -379,11 +373,6 @@
             margin-top: 12px;
             color: #64615d;
             font-size: 0.75rem;
-        }
-
-        footer a {
-            color: #b9915b;
-            text-decoration: none;
         }
 
         @media (max-width: 850px) {
@@ -434,8 +423,9 @@
                 max-width: 300px;
             }
 
-            .stay-card {
-                padding: 30px 22px;
+            .kit-form-wrap {
+                border-left: 0;
+                border-right: 0;
             }
         }
     </style>
@@ -527,18 +517,21 @@
         </div>
     </section>
 
-    <section class="stay-section">
-        <div class="section-inner">
-            <div class="stay-card">
+    <section class="stay-section" id="classified-file">
+        <div class="stay-inner">
+            <div class="stay-intro">
                 <div class="section-label">Stay in the Universe</div>
-                <h2>Classified Access Is Coming</h2>
-                <p>A free Project Titan new-reader file is being prepared: an in-universe starter dossier built to take you deeper without spoiling the journey ahead.</p>
-                <div class="coming-soon">Project Titan Classified File • Coming Soon</div>
+                <h2>Get the Classified Starter File</h2>
+                <p>Join the Project Titan reader list and get the spoiler-free Classified Project Titan Starter File. Confirm your email and the dossier will be ready to download.</p>
+            </div>
 
-                <div class="final-cta">
-                    <a class="button" href="https://books2read.com/ShiftProjectTitan" target="_blank" rel="noopener noreferrer">Start Reading SHIFT</a>
-                    <a class="button secondary" href="index.html">Explore the Universe</a>
-                </div>
+            <div class="kit-form-wrap">
+                <script async data-uid="1186a07ac3" src="https://project-titan-universe.kit.com/1186a07ac3/index.js"></script>
+            </div>
+
+            <div class="final-cta">
+                <a class="button" href="https://books2read.com/ShiftProjectTitan" target="_blank" rel="noopener noreferrer">Start Reading SHIFT</a>
+                <a class="button secondary" href="index.html">Explore the Universe</a>
             </div>
         </div>
     </section>

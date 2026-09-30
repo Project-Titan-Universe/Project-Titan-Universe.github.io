@@ -27,14 +27,16 @@ jobs:
           import re
 
           measurement_id = "G-PC84WN2CVS"
-          snippet = f'''<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={measurement_id}"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){{dataLayer.push(arguments);}}
-  gtag('js', new Date());
-  gtag('config', '{measurement_id}');
-</script>'''
+          snippet = "\n".join([
+              "<!-- Google tag (gtag.js) -->",
+              f'<script async src="https://www.googletagmanager.com/gtag/js?id={measurement_id}"></script>',
+              "<script>",
+              "  window.dataLayer = window.dataLayer || [];",
+              "  function gtag(){dataLayer.push(arguments);}",
+              "  gtag('js', new Date());",
+              f"  gtag('config', '{measurement_id}');",
+              "</script>",
+          ])
 
           changed = []
           for path in sorted(Path('.').glob('*.html')):

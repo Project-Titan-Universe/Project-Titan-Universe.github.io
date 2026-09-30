@@ -1,0 +1,55 @@
+name: Update Reader Funnel CTAs
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/update-reader-funnel-cta.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update-ctas:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Update funnel calls to action
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          changes = {
+              'start.html': (
+                  '''<a class="button" href="https://books2read.com/ShiftProjectTitan" target="_blank" rel="noopener noreferrer">Start With SHIFT</a>\n                    <a class="button secondary" href="shift.html">Explore SHIFT</a>''',
+                  '''<a class="button" href="#classified-file">Get the Free Starter File</a>\n                    <a class="button secondary" href="https://books2read.com/ShiftProjectTitan" target="_blank" rel="noopener noreferrer">Start Reading SHIFT</a>'''
+              ),
+              'index.html': (
+                  '''<a class="button secondary" href="#series">Explore the Series</a>''',
+                  '''<a class="button secondary" href="start.html#classified-file">Get the Free Starter File</a>'''
+              ),
+          }
+
+          for filename, (old, new) in changes.items():
+              path = Path(filename)
+              text = path.read_text(encoding='utf-8')
+              count = text.count(old)
+              if count != 1:
+                  raise SystemExit(f'{filename}: expected exactly 1 matching CTA block, found {count}')
+              path.write_text(text.replace(old, new, 1), encoding='utf-8')
+              print(f'Updated {filename}')
+          PY
+
+      - name: Commit funnel CTA update and remove temporary workflow
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          rm -f .github/workflows/update-reader-funnel-cta.yml
+          git add index.html start.html .github/workflows/update-reader-funnel-cta.yml
+          git commit -m "Prioritize free starter file funnel"
+          git push
